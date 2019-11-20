@@ -1,0 +1,173 @@
+﻿@{ Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Product example · Bootstrap</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/product/">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+   
+    <!-- Bootstrap core CSS -->
+    <link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="product.css" rel="stylesheet">
+    <title>Teste Riosoft C#</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="background-image: url('../../Content/image/img-riosoft.jpg');     background-size: cover;">
+    @*<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top site-header sticky-top py-2">
+            <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                <ul class="navbar-nav mr-auto nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link ">
+                            <h2 style="color:midnightblue; font-weight: bold; opacity: 0.7;">TESTE RIOSOFT C#</h2>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>*@
+        <style>
+            .btn-size {
+                width: 15%;
+                white-space: normal;
+            }
+        </style>
+
+        <div class="container justify-content-center">
+            <div class="row-responsive" style="opacity: 0.9;">
+                <div class="span12" style="text-align:center; margin: 0 auto;">
+                    <form class="form-horizontal" style="width: 1110px; margin: 0 auto;" id="mainform" onsubmit="cadastraCliente(this, event)">
+                        <input type="text" hidden id="idCliente" />
+                        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 justify-content-center shadow-lg p-3 mb-5 bg-white rounded">
+                            <div class="col-md-8 p-lg-8 mx-auto my-8 mb-5">
+                                <h3 class="display-10" style="color:darkslategrey; font-family: calibri; font-weight:500;">
+                                    Formulário de Cadastro
+                                </h3>
+                            </div>
+                            <div class="col-md-12 order-md-1">
+                                <div class="mb-3">
+                                    <label for="fullName">Nome Completo <span class="text-muted"></span></label>
+                                    <input type="text" class="form-control" id="fullName">
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <div class="form-group col-md-6 mb-3">
+                                    <label for="telefone">Telefone</label>
+                                    <input type="tel" data-mask="(00) 0000-0000" maxlength="15" class="form-control"
+                                           id="telefone" placeholder="(00)0000-0000" value="">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="dataNasc">Data de Nascimento</label>
+                                    <input type="date" maxlenght="8" class="form-control" id="dataNasc" placeholder=""
+                                           value="" required="">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email">Email <span class="text-muted"></span></label>
+                                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <div class=" form-group col-md-6 mb-3">
+                                    <label for="dataCadastro">Data de Cadastro</label>
+                                    <input type="date" class="form-control" maxlenght="8" id="dataCadastro" placeholder="" value=""
+                                           disabled />
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="dataAlteracao">Data de Aleteração</label>
+                                    <input type="date" class="form-control" id="dataAlteracao" maxlenght="8" placeholder="" value=""
+                                           disabled />
+                                    <div class="invalid-feedback">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit" id="btnSalvar" class="btn btn-outline-primary btn-size">Salvar</button>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <label id="error" class="text-danger" hidden></label>
+                                <label id="sucesso" class="text-success" hidden></label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container justify-content-center">
+            <div class="row-responsive" style="opacity: 0.9;">
+                <div class="span12" style="text-align:center; margin: 0 auto;">
+                    <form class="form-horizontal" style="width:auto; margin: 0 auto;" id="mainform" onsubmit="cadastraCliente(this, event)">
+                        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 justify-content-center shadow-lg p-3 mb-5 bg-white rounded">
+                            <div class=" p-lg-8 mx-auto my-8 mb-5">
+                                <h3 class="display-10" style="color:darkslategrey; font-family: calibri; font-weight:500;">
+                                    Dados Cadastrais
+                                </h3>
+                                <div class="table-striped">
+                                    <div class="mb-5">
+                                        <table class="table" id="tableCliente">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Nome</th>
+                                                    <th scope="col">Email</th>
+                                                    <th scope="col">Telefone</th>
+                                                    <th scope="col">Data de Nascimento</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+
+            <p class="mb-1">© 2019 Riosoft</p>
+
+            <ul class="list-inline">
+
+                <li class="list-inline-item"><a href="#">Privacidade</a></li>
+
+                <li class="list-inline-item"><a href="#">Termos</a></li>
+
+                <li class="list-inline-item"><a href="#">Suporte</a></li>
+
+            </ul>
+        </footer>
+
+        <script src="../../Scripts/jquery-3.3.1.js"></script>
+        <script src="~/Scripts/app/Main.js"></script>
+        <script src="../../Scripts/app/GetLista.js"></script>
+        <script src="../../Scripts/app/GetId.js"></script>
+        <script src="../../Scripts/app/PostCadastro.js"></script>
+        <script src="../../Scripts/app/Delete.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                lista();
+            })
+        </script>
+    </body>
+
+</html>
